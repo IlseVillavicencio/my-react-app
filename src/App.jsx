@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import CardDescription from './components/cardDescription'
 
 
 function App() {
@@ -50,7 +51,14 @@ function App() {
       return response.json();
     })
     .then((data) => {
-      setPokemonData(data);
+      const formattedData = {
+        name: data.name,
+        image: data.sprites.front_default,
+        types: data.types.map((typeInfo) => typeInfo.type.name),
+        abilities: data.abilities.map((abilityInfo) => abilityInfo.ability.name),
+        stats: data.stats,
+      };
+      setPokemonData(formattedData);
       setError(null); // Limpia cualquier error previo
     })
 
@@ -74,13 +82,20 @@ function App() {
         onChange={handleSearchChange}
         className='search-input'
       />
-      <button type='sumbit'>Buscar</button>
+      <button type='submit'>Buscar</button>
       </form>
 
       {error && <p>{error}</p>} {/*Muestra el mensaje de error si existe*/}
 
       {pokemonData && (
-        <div>
+        <CardDescription
+        name={pokemonData.name}
+        image={pokemonData.image}
+        types={pokemonData.types}
+        abilities={pokemonData.abilities}
+        stats={pokemonData.stats}
+        />
+        /*<div>
           <h2>{pokemonData.name.charAt(0).toUpperCase() + pokemonData.name.slice(1)}</h2>
           <img src={pokemonData.sprites.front_default} alt={pokemonData.name} />
           <p>Tipos: {pokemonData.types.map(typeInfo => typeInfo.type.name).join(', ')}</p>
@@ -93,7 +108,7 @@ function App() {
               </li>
             ))}
           </u1>
-        </div>
+        </div>*/
       )}  
     </div>
   );
