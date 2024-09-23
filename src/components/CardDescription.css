@@ -1,31 +1,178 @@
-.card {
+/* Estilos generales */
+body {
+    background: #f4f4f9; /* Fondo neutro suave */
+    font-family: 'Verdana', sans-serif;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    background-color: #3cd8ec;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.2);
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Encabezado de la página */
+h1 {
+    color: #FF6F61; /* Tono coral vibrante */
+    font-size: 3rem;
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #34495e; /* Tono oscuro suave */
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
     padding: 20px;
-    width: 300px;
-    margin: 20px auto;
+    margin: auto;
     text-align: center;
 }
 
+/* Estilos del formulario de búsqueda */
+form {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Estilo del input de búsqueda */
+.search-input {
+    padding: 10px 20px;
+    width: 300px;
+    font-size: 1.2rem;
+    border: 2px solid #FF6F61; /* Tono coral */
+    border-radius: 8px;
+    margin-right: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #FFB7A2; /* Tono coral más claro */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #FF6F61; /* Tono coral */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #FFB7A2; /* Color hover más claro */
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* Estilo del grid de las tarjetas de Pokémon */
+.pokemon-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 20px;
+}
+
+/* Tarjetas (Card) */
+.card {
+    width: 100%;
+    background: #f89054; /* Fondo amarillo pastel */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+    border: 10px solid #ffd92f; /* Bordes en tono mostaza */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Imagen de la tarjeta */
 .card-image img {
-    width: 170px;
-    height: 170px;
+    width: 80%;
+    max-width: 250px;
+    border-radius: 15px;
+    margin-bottom: 15px;
 }
 
+/* Detalles de la tarjeta */
 .card-details {
-    margin-top: 15px;
+    padding: 10px;
+    text-align: center;
 }
 
-.card-stats ul{
+.card-details h2 {
+    font-size: 1.8rem;
+    color: #ffffff; /* Tono gris oscuro */
+    margin: 0;
+}
+
+.card-details p {
+    margin: 5px 0;
+    color: #34495e;
+}
+
+.card-details strong {
+    color: #ffffff; /* Tono mostaza */
+}
+
+/* Stats de la tarjeta */
+.card-stats {
+    border-top: 2px solid #FF6F61; /* Línea coral */
+    padding-top: 10px;
+    margin-top: 20px;
+}
+
+.card-stats h3 {
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.card-stats ul {
     list-style-type: none;
     padding: 0;
 }
 
 .card-stats li {
-    margin: 5px 0;
+    margin: 8px 0;
+    color: #ffffff;
 }
+
+.card-stats li::before {
+    content: '⭐'; /* Añade una estrella */
+    font-size: 1.2rem; /* Tamaño de la estrella */
+    color: #FFA500; /* Color naranja intenso */
+    margin-right: 10px; /* Espacio entre la estrella y el texto */
+    vertical-align: middle; /* Alineación vertical */
+}
+
+/* Mensaje de error */
+p.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Mensaje de carga */
+p.loading {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-top: 20px;
+}
+

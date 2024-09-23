@@ -2,16 +2,51 @@ body {
   margin: 0; /*Usar Flexbox*/
   display: flex; /*Organiza los elementos en columna*/
   align-items: center; /*Centrar horizontalmente*/
-  justify-content: center; /*Centrar verticalmente*/
-  height: 100vh; /*Ocupa toda la altura de la ventana*/
+  /*justify-content: center; /*Centrar verticalmente*/
+  /*height: 100vh; /*Ocupa toda la altura de la ventana*/
   font-family: Arial, Helvetica, sans-serif; /*Fuente*/
-
+  justify-content:center;
+  min-height: 100vh;
+  background-color: #333;
 }
 
 .container{
   text-align: center; /*Centra el texto dentro del contenedor*/
+  padding: 30px; /*Se añade para que el contenido no esté pegado al borde*/
 }
 
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 50px; /*Aumentar para separarlos más*/
+  margin-top: 20px; /*Añade espacio dentro del grid para que las tarjetas no se paguen al borde del contenedor*/
+}
+
+.card {
+    width: 150px; /* Ancho inicial más pequeño */
+    background: #f89054; /* Fondo amarillo pastel */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 10px; /* Padding inicial más pequeño */
+    margin: 20px;
+    font-family: 'Verdana', sans-serif;
+    text-align: center;
+    border: 10px solid #ffd92f; /* Bordes en tono mostaza */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease; /* Transiciones */
+}
+
+.search-input {
+  padding: 10px;
+  width: 300px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin: 20px auto;
+  /*margin-bottom: 20px;
+  margin-top: 20px; /*Se añade un margen superior*/
+  display: block;
+  
+}
 
 /*Estilo para el titulo*/
 h1 {
