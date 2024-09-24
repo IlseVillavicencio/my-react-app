@@ -1,7 +1,7 @@
 /* Estilos generales */
 body {
-    background: #f4f4f9; /* Fondo neutro suave */
-    font-family: 'Verdana', sans-serif;
+    background: #3498db; /* Fondo claro y limpio */
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,28 +9,33 @@ body {
     align-items: center;
     flex-direction: column;
     min-height: 100vh;
+    color: #2c3e50; /* Color de texto predeterminado */
 }
 
 /* Encabezado de la página */
 h1 {
-    color: #FF6F61; /* Tono coral vibrante */
-    font-size: 3rem;
+    color: #3498db; /* Azul vibrante */
+    font-size: 3.5rem;
     margin-top: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    /*text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);*/
 }
 
 h2 {
-    color: #34495e; /* Tono oscuro suave */
-    font-size: 1.8rem;
+    color: #2c3e50; /* Azul oscuro */
+    font-size: 2rem;
     margin-bottom: 20px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* Contenedor principal */
 .container {
-    max-width: 1200px;
-    padding: 20px;
-    margin: auto;
+    max-width: 1000px;
+    padding: 30px;
+    margin: 30px auto;
     text-align: center;
+    background: white; /* Fondo blanco para resaltar el contenido */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
 }
 
 /* Estilos del formulario de búsqueda */
@@ -44,69 +49,70 @@ form {
 
 /* Estilo del input de búsqueda */
 .search-input {
-    padding: 10px 20px;
-    width: 300px;
-    font-size: 1.2rem;
-    border: 2px solid #FF6F61; /* Tono coral */
-    border-radius: 8px;
+    padding: 12px 25px;
+    width: 320px;
+    font-size: 1.3rem;
+    border: 2px solid #3498db; /* Azul vibrante */
+    border-radius: 10px;
     margin-right: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .search-input:focus {
     outline: none;
-    border-color: #FFB7A2; /* Tono coral más claro */
+    border-color: #85c1e9; /* Azul claro */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Sombra más intensa al enfocarse */
 }
 
+/* Estilo del botón */
 button {
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    background-color: #FF6F61; /* Tono coral */
+    padding: 12px 25px;
+    font-size: 1.3rem;
+    background-color: #3498db; /* Azul vibrante */
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background-color: #FFB7A2; /* Color hover más claro */
+    background-color: #85c1e9; /* Color hover azul claro */
     transform: scale(1.05);
-    transition: 0.3s;
 }
 
 /* Estilo del grid de las tarjetas de Pokémon */
 .pokemon-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 30px;
     justify-items: center;
-    padding: 20px;
+    padding: 30px;
 }
 
 /* Tarjetas (Card) */
 .card {
     width: 100%;
-    background: #f89054; /* Fondo amarillo pastel */
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    margin: 20px;
-    font-family: 'Verdana', sans-serif;
+    background: linear-gradient(135deg, #3498db 0%, #85c1e9 100%); /* Degradado azul */
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 25px;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+    border: none;
     text-align: center;
-    border: 10px solid #ffd92f; /* Bordes en tono mostaza */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    transform: translateY(-10px); /* Efecto hover más suave */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* Imagen de la tarjeta */
 .card-image img {
-    width: 80%;
-    max-width: 250px;
+    width: 100%;
+    max-width: 200px;
     border-radius: 15px;
     margin-bottom: 15px;
 }
@@ -119,28 +125,29 @@ button:hover {
 
 .card-details h2 {
     font-size: 1.8rem;
-    color: #ffffff; /* Tono gris oscuro */
+    color: #ffffff; /* Texto blanco */
     margin: 0;
 }
 
 .card-details p {
     margin: 5px 0;
-    color: #34495e;
+    color: #2c3e50; /* Azul oscuro */
+    font-size: 1.1rem;
 }
 
 .card-details strong {
-    color: #ffffff; /* Tono mostaza */
+    color: #ffd92f; /* Mostaza para destacar */
 }
 
 /* Stats de la tarjeta */
 .card-stats {
-    border-top: 2px solid #FF6F61; /* Línea coral */
+    border-top: 2px solid #3498db; /* Azul vibrante */
     padding-top: 10px;
     margin-top: 20px;
 }
 
 .card-stats h3 {
-    font-size: 1.2em;
+    font-size: 1.3rem;
     color: #ffffff;
     margin-bottom: 10px;
 }
@@ -153,25 +160,19 @@ button:hover {
 .card-stats li {
     margin: 8px 0;
     color: #ffffff;
+    font-size: 1.1rem;
 }
 
 .card-stats li::before {
-    content: '⭐'; /* Añade una estrella */
-    font-size: 1.2rem; /* Tamaño de la estrella */
-    color: #FFA500; /* Color naranja intenso */
-    margin-right: 10px; /* Espacio entre la estrella y el texto */
-    vertical-align: middle; /* Alineación vertical */
+    content: '⭐';
+    font-size: 1.4rem;
+    color: #f39c12; /* Naranja para destacar */
+    margin-right: 10px;
+    vertical-align: middle;
 }
 
 /* Mensaje de error */
 p.error {
-    color: red;
+    color: #e74c3c; /* Rojo vibrante */
     font-weight: bold;
-}
-
-/* Mensaje de carga */
-p.loading {
-    font-size: 1.5rem;
-    color: #34495e;
-    margin-top: 20px;
 }

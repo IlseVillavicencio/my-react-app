@@ -58,7 +58,6 @@ function App() {
   return (
     <div className='container'>
       <h1>PokemonAPI</h1>
-      <h2>Buscar Pokémon</h2>
 
       <form onSubmit={handleSearchSubmit}>
         <input
