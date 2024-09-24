@@ -39,4 +39,3 @@ function CardDescription({ name, image, types, abilities, stats }) {
 }
 
 export default CardDescription;
-
